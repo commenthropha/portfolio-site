@@ -1,0 +1,57 @@
+.site__header {
+    padding: 4rem 6rem;
+    height: 500px;
+}
+
+.site__header h1 {
+    font-family: var(--font-family);
+    text-shadow: 2px 2px 8px black;
+    margin: 10rem 10rem;
+    color: white;
+    font-weight: 800;
+    font-size: 120px;
+    line-height: 110px;
+    letter-spacing: -0.02em;
+}
+
+@media screen and (max-width: 1200px) {
+    .site__header {
+        padding: 4rem 2rem;
+    }
+
+    .site__header h1 {
+        font-size: 80px;
+        line-height: 80px;
+        margin: 5rem 3rem;
+    }
+
+    .site__header p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .site__header h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+}
+
+@media screen and (max-width: 490px) {
+
+    .site__header {
+        padding: 1rem 1rem;
+    }
+    
+    .site__header h1 {
+        font-size: 55px;
+        font-style: bold;
+        line-height: 55px;
+        margin: 6rem 2rem 2rem 2rem;
+    }
+}

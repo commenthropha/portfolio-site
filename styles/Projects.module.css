@@ -1,0 +1,64 @@
+.site__projects {
+    padding: 4rem 6rem;
+    margin: 2rem 10rem;
+}
+
+
+.site__projects h1 {
+    text-align: right;
+    font-family: var(--font-family);
+    text-shadow: 2px 2px 8px black;
+    color: white;
+    font-weight: 800;
+    font-size: 45px;
+    line-height: 45px;
+    letter-spacing: -0.02em;
+}
+
+.site__projects p {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .site__projects {
+        padding: 3rem 2rem;
+        margin: 4rem 3rem;
+    }
+
+    .site__projects h1 {
+        font-size: 35px;
+        line-height: 35px;
+        
+    }
+
+    .site__projects p {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+}
+
+@media screen and (max-width: 490px) {
+
+    .site__projects {
+        padding: 3rem 4rem;
+        margin: 4rem 0rem;
+    }
+    
+    .site__projects h1 {
+        font-size: 30px;
+        line-height: 30px;
+        
+    }
+
+    .site__projects p {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
