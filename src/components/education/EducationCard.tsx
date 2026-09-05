@@ -32,7 +32,7 @@ const EducationCard = ({
   grades,
   dissertation,
 }: EducationCardProps) => {
-const className = qualification.replace(/[\s-]+/g, "");
+  const className = qualification.replace(/[\s-]+/g, "");
 
   return (
     <div className="rounded-lg overflow-hidden border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900">
@@ -67,25 +67,30 @@ const className = qualification.replace(/[\s-]+/g, "");
           <span className="text-stone-500">{"{"}</span>
         </div>
 
-        {/* grades as public static final String constants */}
         <div className="ml-4 mt-2 space-y-1">
           {grades.map((grade, i) => {
             const [label, ...rest] = grade.split(":");
             const value = rest.join(":").trim();
-            const constName = label.trim().toUpperCase().replace(/\s+/g, "_");
+            const camelCaseName = label
+              .trim()
+              .toLowerCase()
+              .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase());
+            const rawValue = value || label.trim();
+            const formattedValue = qualification === "GCSEs" ? rawValue : `"${rawValue}"`;
+
             return (
               <div key={i}>
-                <Keyword>public static </Keyword>
-                <Type>String </Type>
-                <Field>{constName}</Field>
+                <Type>
+                  {qualification === "GCSEs" ? "int " : "String "}
+                </Type>
+                <Field>{camelCaseName}</Field>
                 <span className="text-stone-500"> = </span>
-                <Str>"{value || label.trim()}"</Str>
+                <Str>{formattedValue}</Str>
                 <span className="text-stone-500">;</span>
               </div>
             );
           })}
         </div>
-
         {dissertation && (
           <div className="ml-4 mt-3 space-y-0.5 pt-3">
             <div>
@@ -97,9 +102,8 @@ const className = qualification.replace(/[\s-]+/g, "");
               <span className="text-stone-500">)</span>
             </div>
             <div>
-              <Keyword>public </Keyword>
               <Type>String </Type>
-              <Field>TITLE</Field>
+              <Field>title</Field>
               <span className="text-stone-500"> = </span>
               <Str>"{dissertation.title}"</Str>
               <span className="text-stone-500">;</span>

@@ -217,8 +217,8 @@ const ResponsiveCanvas = () => {
 
 const Hero = () => {
   return (
-    <section className="max-w-[70rem] mx-auto lg:mt-20 flex flex-col lg:flex-row items-center min-h-[50vh]">
-      <div className="lg:w-1/2 flex flex-col justify-center items-center lg:items-start px-8 lg:px-1 gap-6">
+    <section className="max-w-[70rem] mx-auto lg:mt-20 flex flex-col-reverse lg:flex-row items-center min-h-[50vh]">
+      <div className="lg:w-1/2 flex flex-col justify-center items-center lg:items-start px-8 lg:px-1 gap-6 mb-10 lg:mb-0">
         <Terminal />
       </div>
       <div className="lg:w-1/2 w-full mt-10">
