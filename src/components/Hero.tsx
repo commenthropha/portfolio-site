@@ -180,17 +180,30 @@ const Terminal = () => {
 };
 
 const ResponsiveCanvas = () => {
+  const [interactive, setInteractive] = useState("none");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setInteractive(window.innerWidth > 1023 ? "auto" : "none");
+    };
+    
+    handleResize(); 
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Canvas
       camera={{ position: [1, 3, 10] }}
       //@ts-ignore
-      style={{ height: `450px`, pointerEvents: "auto" }}
+      style={{ height: `450px`, pointerEvents: interactive }}
     >
       <OrbitControls
         enableZoom={false}
         enablePan={false}
         autoRotate={true}
-        autoRotateSpeed={0.5}
+        autoRotateSpeed={0.5} 
         minPolarAngle={1.2}
         maxPolarAngle={1.2}
       />
