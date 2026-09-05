@@ -58,8 +58,8 @@ const educationData: EducationItem[] = [
   {
     years: "2022 - 2026",
     institution: "University of Warwick",
-    qualification: "BScComputerScienceWithIntercalatedYear",
-    grades: ["Degree: First Class (With Honours)"],
+    qualification: "Undergraduate",
+    grades: ["Degree: BSc Computer Science (With Intercalated Year)", "Classification: First Class (With Honours)"],
     dissertation: {
       title:
         "Development of a Web-Based Variant Management Platform for Electrical Systems",
@@ -100,7 +100,7 @@ const Career = () => (
     <hr className="border-t-4 border-stone-300 dark:border-stone-700" />
     <CareerTimeline items={workData} />
 
-    <div className="bg-stone-300 dark:bg-stone-700 p-5 rounded-lg">
+    <div className="bg-stone-300 dark:bg-stone-700 px-2 py-5 lg:px-5 rounded-lg">
       <CareerSection
         eyebrow="EDUCATION"
         heading="Academic Background."

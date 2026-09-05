@@ -32,7 +32,7 @@ const EducationCard = ({
   grades,
   dissertation,
 }: EducationCardProps) => {
-  const className = institution.replace(/\s+/g, "");
+const className = qualification.replace(/[\s-]+/g, "");
 
   return (
     <div className="rounded-lg overflow-hidden border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900">
@@ -63,7 +63,7 @@ const EducationCard = ({
           <Keyword>public class </Keyword>
           <Type>{className} </Type>
           <Keyword>extends </Keyword>
-          <Type>{qualification} </Type>
+          <Type>{institution} </Type>
           <span className="text-stone-500">{"{"}</span>
         </div>
 
@@ -75,7 +75,7 @@ const EducationCard = ({
             const constName = label.trim().toUpperCase().replace(/\s+/g, "_");
             return (
               <div key={i}>
-                <Keyword>public static final </Keyword>
+                <Keyword>public static </Keyword>
                 <Type>String </Type>
                 <Field>{constName}</Field>
                 <span className="text-stone-500"> = </span>
@@ -97,7 +97,7 @@ const EducationCard = ({
               <span className="text-stone-500">)</span>
             </div>
             <div>
-              <Keyword>public static final </Keyword>
+              <Keyword>public </Keyword>
               <Type>String </Type>
               <Field>TITLE</Field>
               <span className="text-stone-500"> = </span>

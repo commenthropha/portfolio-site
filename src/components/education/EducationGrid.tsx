@@ -17,7 +17,7 @@ interface EducationGridProps {
 }
 
 const EducationGrid = ({ items }: EducationGridProps) => (
-  <div className="flex flex-col gap-4 px-5">
+  <div className="flex flex-col gap-4">
     {items.map((item, i) => (
       <EducationCard key={i} {...item} />
     ))}
