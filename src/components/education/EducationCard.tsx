@@ -18,9 +18,6 @@ const Type = ({ children }: { children: React.ReactNode }) => (
 const Str = ({ children }: { children: React.ReactNode }) => (
   <span className="text-amber-400 font-mono">{children}</span>
 );
-const Comment = ({ children }: { children: React.ReactNode }) => (
-  <span className="text-stone-500 font-mono italic">{children}</span>
-);
 const Annotation = ({ children }: { children: React.ReactNode }) => (
   <span className="text-green-500 font-mono">{children}</span>
 );
